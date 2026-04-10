@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="280" height="280" viewBox="0 0 320 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="beanGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#C27A2B"/>
+      <stop offset="100%" stop-color="#3B1D0B"/>
+    </linearGradient>
+    <linearGradient id="steamGradient" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFF2D1" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#FFD18F" stop-opacity="0.2"/>
+    </linearGradient>
+    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="320" height="320" rx="48" fill="#141820"/>
+  <circle cx="160" cy="160" r="110" fill="#2F3649" opacity="0.95"/>
+  <g filter="url(#softGlow)">
+    <path d="M110 182C110 202.091 126.909 219 147 219H173C193.091 219 210 202.091 210 182V150C210 130.909 193.091 114 173 114H147C126.909 114 110 130.909 110 150V182Z" fill="#1F2436" stroke="#B98D4E" stroke-width="6"/>
+    <path d="M210 160C224 160 236 150 236 136C236 122 224 112 210 112" stroke="#B98D4E" stroke-width="6" fill="none"/>
+    <path d="M128 140C132 120 146 108 160 108C174 108 188 120 192 140" stroke="#FFD18F" stroke-width="12" fill="none" stroke-linecap="round" opacity="0.85"/>
+    <path d="M103 174C103 198 118 215 144 222C170 229 196 220 206 198" stroke="#FFCE8C" stroke-width="10" fill="none" opacity="0.6" stroke-linecap="round"/>
+    <path d="M108 150C118 148 130 146 140 150C150 154 158 162 170 170C186 182 204 187 218 176" stroke="#F8E1C2" stroke-width="8" fill="none" opacity="0.45" stroke-linecap="round"/>
+    <path d="M162 86C156 70 156 58 156 52" stroke="url(#steamGradient)" stroke-width="14" stroke-linecap="round" opacity="0.8"/>
+    <path d="M180 88C174 72 174 60 174 54" stroke="url(#steamGradient)" stroke-width="14" stroke-linecap="round" opacity="0.7"/>
+    <path d="M146 94C142 78 142 66 142 60" stroke="url(#steamGradient)" stroke-width="14" stroke-linecap="round" opacity="0.75"/>
+  </g>
+
+  <circle cx="160" cy="160" r="54" fill="url(#beanGradient)" opacity="0.95" transform="rotate(-20 160 160)"/>
+  <path d="M160 126C150 132 146 146 146 160C146 174 150 188 160 194" stroke="#3B1D0B" stroke-width="10" stroke-linecap="round"/>
+</svg>

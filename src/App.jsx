@@ -66,7 +66,10 @@ function App() {
 
   return (
     <div className="container">
-      <h1>☕ The Jitter Feed</h1>
+      <div className="title-row">
+        <img src="/jitter-logo-coffee-artistic.svg" alt="Jitter icon" className="app-icon" />
+        <h1>The Jitter Feed</h1>
+      </div>
 
       <div className="card">
         <h3>Create Your Profile</h3>

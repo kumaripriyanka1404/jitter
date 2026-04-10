@@ -124,3 +124,14 @@ button:hover {
   font-family: 'Courier New', Courier, monospace; /* Adds a clean "coding" vibe */
   margin-top: 2px;
 }
+
+.title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.app-icon {
+  width: 100px;
+  height: 100px;
+}
