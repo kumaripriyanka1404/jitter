@@ -1,0 +1,126 @@
+.container {
+  max-width: 600px;
+  margin: 50px auto;
+  font-family: 'Inter', sans-serif;
+  color: #ffffff;
+}
+
+.card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  border-top: 5px solid #6f4e37;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d7ccc8;
+  border-radius: 6px;
+  box-sizing: border-box; /* Crucial for width */
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background: #6f4e37;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #4e342e;
+}
+
+/* Container for the whole list */
+.list-section {
+  margin-top: 40px;
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.list-section h3 {
+  margin-top: 0;
+  color: #5d4037;
+  border-bottom: 2px solid #f3e5f5;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+/* The <ul> element */
+.customer-grid {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Ensure the main card aligns items to the center of the row */
+.customer-card {
+  display: flex;
+  align-items: center; /* Aligns avatar and info container on the same horizontal line */
+  padding: 12px 20px;
+  background: #ffffff;
+  border-radius: 10px;
+  border: 1px solid #e0e0e0;
+  margin-bottom: 10px;
+}
+
+.customer-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+  border-color: #6f4e37;
+}
+
+/* Circular Avatar Placeholder */
+.avatar {
+  width: 45px;
+  height: 45px;
+  background-color: #d7ccc8;
+  color: #5d4037;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-weight: bold;
+  margin-right: 15px;
+  flex-shrink: 0; /* Prevents circle from squishing */
+}
+
+/* Container for name and email */
+.customer-info {
+  display: flex;
+  flex-direction: column; /* Stack name on top of email */
+  justify-content: center; /* Center them vertically relative to the avatar */
+  text-align: left; /* Ensure text is left-aligned */
+  line-height: 1.4; /* Improves readability between lines */
+}
+
+.customer-name {
+  font-weight: 700;
+  color: #2d3436;
+  font-size: 1.05rem;
+  /* Prevents long names from breaking the layout */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; 
+  max-width: 250px;
+}
+
+.customer-email {
+  font-size: 0.85rem;
+  color: #636e72;
+  font-family: 'Courier New', Courier, monospace; /* Adds a clean "coding" vibe */
+  margin-top: 2px;
+}
