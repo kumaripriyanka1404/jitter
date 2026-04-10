@@ -1,0 +1,20 @@
+<svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Minimal coffee bean corner background for Jitter">
+  <rect width="1200" height="800" fill="#1b1624" />
+
+  <g fill="#5e493a" opacity="0.9">
+    <ellipse cx="140" cy="110" rx="32" ry="20" transform="rotate(-18 140 110)" />
+    <ellipse cx="172" cy="112" rx="11" ry="7" fill="#412f24" />
+    <path d="M106 110c16-14 40-12 54 0 16 14 20 34 7 50-12 14-32 18-48 9-20-11-28-40-13-59z" fill="#3f2c23" opacity="0.35" />
+  </g>
+
+  <g fill="#5e493a" opacity="0.9">
+    <ellipse cx="1040" cy="680" rx="34" ry="21" transform="rotate(-18 1040 680)" />
+    <ellipse cx="1068" cy="684" rx="12" ry="7" fill="#412f24" />
+    <path d="M1030 680c16-14 40-12 54 0 16 14 20 34 7 50-12 14-32 18-48 9-20-11-28-40-13-59z" fill="#3f2c23" opacity="0.35" />
+  </g>
+
+  <g fill="#c9b59d" opacity="0.14">
+    <circle cx="130" cy="170" r="9" />
+    <circle cx="1160" cy="720" r="11" />
+  </g>
+</svg>

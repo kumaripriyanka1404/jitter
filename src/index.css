@@ -50,8 +50,21 @@
   }
 }
 
+html {
+  min-height: 100%;
+  background: #08060f;
+}
+
 body {
   margin: 0;
+  min-height: 100vh;
+  background-color: #1b1624;
+  background-image: url('/jitter-bg-coffee-code.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  color: #f2f2f8;
 }
 
 #root {

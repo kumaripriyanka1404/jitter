@@ -55,7 +55,6 @@ function App() {
         .then(data => setUsers(data.slice(0, 5)));
     } else {
       const errorText = await res.text();
-      const errorData = await res.json();
       alert(`Error: ${res.status} - ${errorText}`);
     }
   };
