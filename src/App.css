@@ -40,6 +40,26 @@ button:hover {
   background: #4e342e;
 }
 
+.link-button {
+  background: transparent;
+  color: #5d4037;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-decoration: underline;
+  font: inherit;
+}
+
+.link-button:hover {
+  color: #e8a596;
+}
+
+.switch-line {
+  margin-top: 16px;
+  font-size: 0.95rem;
+  color: #5d4037;
+}
+
 /* Container for the whole list */
 .list-section {
   margin-top: 40px;
