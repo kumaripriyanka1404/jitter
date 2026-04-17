@@ -3,7 +3,7 @@ import './App.css';
 
 function App() {
   // 1. Initialize state as an object to hold all user details
-  const [signUpData, setSignUpData] = useState({ lastName: '', email: '', firstName: '' });
+  const [signUpData, setSignUpData] = useState({ lastName: '', email: '', firstName: '', password: '' });
   const [users, setUsers] = useState([]);
 
   // Fetch initial users for the list
@@ -28,7 +28,7 @@ function App() {
   const addUser = async (e) => {
     e.preventDefault();
 
-    if (!signUpData.firstName || !signUpData.email) {
+    if (!signUpData.firstName || !signUpData.email || !signUpData.password) {
       alert("Please fill in the required fields!");
       return;
     }
@@ -42,13 +42,14 @@ function App() {
       body: JSON.stringify({
         firstName: signUpData.firstName,
         lastName: signUpData.lastName,
-        email: signUpData.email
+        email: signUpData.email,
+        password: signUpData.password
       })
     });
 
     if (res.ok) {
       alert(`Welcome, ${signUpData.firstName}! Account brewed successfully.`);
-      setSignUpData({ firstName: '', lastName: '', email: '' });
+      setSignUpData({ firstName: '', lastName: '', email: '', password: '' });
       // Optionally refresh the users list
       fetch('/api/users')
         .then(res => res.json())
@@ -66,7 +67,7 @@ function App() {
   return (
     <div className="container">
       <div className="title-row">
-        <img src="/jitter-logo-coffee-artistic.svg" alt="Jitter icon" className="app-icon" />
+        <img src="/jitter_logo_light.png" alt="Jitter icon" className="app-icon" />
         <h1>The Jitter Feed</h1>
       </div>
 
@@ -99,6 +100,17 @@ function App() {
               value={signUpData.email}
               onChange={handleChange}
               placeholder="Email Address"
+              required
+            />
+          </div>
+
+          <div className="form-group">
+            <input
+              type="password"
+              name="password"
+              value={signUpData.password}
+              onChange={handleChange}
+              placeholder="Password"
               required
             />
           </div>
