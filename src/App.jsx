@@ -3,7 +3,7 @@ import './App.css';
 
 function App() {
   // 1. Initialize state as an object to hold all user details
-  const [formData, setFormData] = useState({ lastName: '', email: '', firstName: '' });
+  const [signUpData, setSignUpData] = useState({ lastName: '', email: '', firstName: '', password: '' });
   const [users, setUsers] = useState([]);
 
   // Fetch initial users for the list
@@ -16,8 +16,8 @@ function App() {
   // 2. Handle input changes dynamically
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,        // Keep existing fields
+    setSignUpData({
+      ...signUpData,        // Keep existing fields
       [name]: value       // Update only the field that changed
     });
   };
@@ -28,7 +28,7 @@ function App() {
   const addUser = async (e) => {
     e.preventDefault();
 
-    if (!formData.firstName || !formData.email) {
+    if (!signUpData.firstName || !signUpData.email || !signUpData.password) {
       alert("Please fill in the required fields!");
       return;
     }
@@ -40,22 +40,22 @@ function App() {
         'Accept': 'application/json'
       },
       body: JSON.stringify({
-        firstName: formData.firstName,
-        lastName: formData.lastName,
-        email: formData.email
+        firstName: signUpData.firstName,
+        lastName: signUpData.lastName,
+        email: signUpData.email,
+        password: signUpData.password
       })
     });
 
     if (res.ok) {
-      alert(`Welcome, ${formData.firstName}! Account brewed successfully.`);
-      setFormData({ firstName: '', lastName: '', email: '' });
+      alert(`Welcome, ${signUpData.firstName}! Account brewed successfully.`);
+      setSignUpData({ firstName: '', lastName: '', email: '', password: '' });
       // Optionally refresh the users list
       fetch('/api/users')
         .then(res => res.json())
         .then(data => setUsers(data.slice(0, 5)));
     } else {
       const errorText = await res.text();
-      const errorData = await res.json();
       alert(`Error: ${res.status} - ${errorText}`);
     }
   };
@@ -66,7 +66,10 @@ function App() {
 
   return (
     <div className="container">
-      <h1>☕ The Jitter Feed</h1>
+      <div className="title-row">
+        <img src="/jitter_logo_light.png" alt="Jitter icon" className="app-icon" />
+        <h1>The Jitter Feed</h1>
+      </div>
 
       <div className="card">
         <h3>Create Your Profile</h3>
@@ -74,7 +77,7 @@ function App() {
           <div className="form-group">
             <input
               name="firstName"
-              value={formData.firstName}
+              value={signUpData.firstName}
               onChange={handleChange}
               placeholder="First Name"
               required
@@ -84,7 +87,7 @@ function App() {
           <div className="form-group">
             <input
               name="lastName"
-              value={formData.lastName}
+              value={signUpData.lastName}
               onChange={handleChange}
               placeholder="Last Name"
             />
@@ -94,9 +97,20 @@ function App() {
             <input
               type="email"
               name="email"
-              value={formData.email}
+              value={signUpData.email}
               onChange={handleChange}
               placeholder="Email Address"
+              required
+            />
+          </div>
+
+          <div className="form-group">
+            <input
+              type="password"
+              name="password"
+              value={signUpData.password}
+              onChange={handleChange}
+              placeholder="Password"
               required
             />
           </div>
@@ -123,6 +137,7 @@ function App() {
           ))}
         </ul>
       </div>
+      
     </div>
   );
 }
